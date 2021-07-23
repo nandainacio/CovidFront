@@ -1,0 +1,29 @@
+<h1>{{titulo}}</h1>
+<div class="div-table-fornecedor">
+    <div class="div-addFornecedor">
+        <a [routerLink] = "['/fornecedor/form']">
+        <img class="imgAdd" src="./../../../assets/imgAdd.png">
+        </a>
+    </div>
+    <!-- <img class="imgAdd" src="./../../../assets/imgAdd.png"> -->
+    <table class="table-fornecedor">
+        <tr class="item-table">
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Quantidade de Aplicação</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="table-lista-fornecedor" *ngFor="let fornecedor of fornecedorList">
+            <td>{{fornecedor.id}}</td>
+            <td>{{fornecedor.nome}}</td>
+            <td>{{fornecedor.qtdApli}}</td>
+            <td class="imgDelete">
+                <img  (click)="delete(fornecedor.id)" src="./../../../assets/imgDelete.png">
+            </td>
+            <td class="imgEdit">
+                <img (click)="showEdit(fornecedor)" style="cursor: pointer;" src="./../../../assets/imgEdit.png">
+            </td>
+        </tr>
+    </table>
+</div>

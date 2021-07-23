@@ -1,0 +1,29 @@
+<h1>{{titulo}}</h1>
+<div class="div-table-pessoa">
+    <div class="div-addPessoa">
+        <a [routerLink] = "['/pessoa/form']">
+        <img class="imgAdd" src="./../../../assets/imgAdd.png">
+        </a>
+    </div>
+    <!-- <img class="imgAdd" src="./../../../assets/imgAdd.png"> -->
+    <table class="table-pessoa">
+        <tr class="item-table">
+            <td>Id</td>
+            <td>Nome</td>
+            <td>CPF</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="table-lista-pessoa" *ngFor="let pessoa of pessoaList">
+            <td>{{pessoa.id}}</td>
+            <td>{{pessoa.nome}}</td>
+            <td>{{pessoa.cpf}}</td>
+            <td class="imgDelete">
+                <img  (click)="delete(pessoa.id)" src="./../../../assets/imgDelete.png">
+            </td>
+            <td class="imgEdit">
+                <img (click)="showEdit(pessoa)" style="cursor: pointer;" src="./../../../assets/imgEdit.png">
+            </td>
+        </tr>
+    </table>
+</div>
